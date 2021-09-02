@@ -1,0 +1,25 @@
+---
+title: "An investment about miles per gallon (mpg) for highway driving"
+output: github_document
+---
+I wanted to investigate the mpg for highway driving which appeared most frequently in the popular models in 1999 and 2008.
+ 
+
+```{r setup_workspace, message=FALSE}
+
+library(tidyverse)
+
+```
+
+```{r}
+glimpse(mpg)
+
+```
+
+```{r our_first_plot, message=FALSE}
+ggplot(mpg, aes(hwy)) + 
+  geom_histogram()
+
+```
+
+This plot suggests that the mpg for highway driving which appeared most frequently in the popular models in 1999 and 2008 is about **26**.
