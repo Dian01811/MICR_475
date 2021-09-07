@@ -217,15 +217,17 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSAzXG5iIDwtIDJcbihhK2IpXG5gYGAifQ== -->
-<pre class="r"><code>a &lt;- 3
-b &lt;- 2
-(a+b)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMjIyMjIyMjXG4jIFByaW50IHRoZSBzdW0gb2YgYSBhbmQgYlxuIyMjIyMjIyMjXG5hIDwtIDMgIyBBc3NpZ24gdGhlIHZhbHVlIDMgdG8gYSB2YXJpYWJsZSBjYWxsZWQgYVxuYiA8LSAyICMgQXNzaWduIHRoZSB2YWx1ZSAzIHRvIGEgdmFyaWFibGUgY2FsbGVkIGFcbihhK2IpIFxuYGBgIn0= -->
+<pre class="r"><code>#########
+# Print the sum of a and b
+#########
+a &lt;- 3 # Assign the value 3 to a variable called a
+b &lt;- 2 # Assign the value 3 to a variable called a
+(a+b) </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDVcbiJ9 -->
-<pre><code>[1] 5</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA8LSAzXG5iIDwtIDJcbnN1bShhK2IpXG5gYGAifQ== -->
 <pre class="r"><code>a &lt;- 3
@@ -287,10 +289,11 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQUFfZmxpZ2h0cyA8LSBmaWx0ZXIoZmxpZ2h0cywgY2FycmllciA9PSBcIkFBXCIpXG5nZ3Bsb3QoZGF0YSA9IEFBX2ZsaWdodHMpICsgXG4gIGdlb21fcG9pbnQobWFwcGluZyA9IGFlcyh4ID0gZGVwX2RlbGF5LCB5ID0gYXJyX2RlbGF5KSlcbmBgYCJ9 -->
-<pre class="r"><code>AA_flights &lt;- filter(flights, carrier == &quot;AA&quot;)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuQUFfZmxpZ2h0cyA8LSBmaWx0ZXIoZmxpZ2h0cywgY2FycmllciA9PSBcIkFBXCIsIG5hLnJtID0gVFJVRSlcbiN2aWV3KEFBX2ZsaWdodHMpXG5nZ3Bsb3QoZGF0YSA9IEFBX2ZsaWdodHMpICsgXG4gIGdlb21fcG9pbnQobWFwcGluZyA9IGFlcyh4ID0gZGVwX2RlbGF5LCB5ID0gYXJyX2RlbGF5KSkgI21ha2UgYSBzY2F0dGVyIHBsb3QgYnkgbWFwcGluZyB0aGUgZGVwYXJ0dXJlIGRlbGF5IHZzLiBhcnJpdmFsIGRlbGF5XG5gYGAifQ== -->
+<pre class="r"><code>AA_flights &lt;- filter(flights, carrier == &quot;AA&quot;, na.rm = TRUE)
+#view(AA_flights)
 ggplot(data = AA_flights) + 
-  geom_point(mapping = aes(x = dep_delay, y = arr_delay))</code></pre>
+  geom_point(mapping = aes(x = dep_delay, y = arr_delay)) #make a scatter plot by mapping the departure delay vs. arrival delay</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogUmVtb3ZlZCA3ODIgcm93cyBjb250YWluaW5nIG1pc3NpbmcgdmFsdWVzIChnZW9tX3BvaW50KS5cbiJ9 -->
 <pre><code>Warning: Removed 782 rows containing missing values (geom_point).</code></pre>
@@ -300,7 +303,7 @@ ggplot(data = AA_flights) +
 <!-- rnb-plot-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZXdvcmsgNCIKb3V0cHV0OiBnaXRodWJfZG9jdW1lbnQKLS0tCmBgYHtyfQphIDwtIDMgI2Fzc2lnbiB0aGUgdmFsdWUgMyB0byBhIHZhcmlhYmxlIGNhbGxlZCBhCmIgPC0gMiAjYXNzaWduIHRoZSB2YWx1ZSAzIHRvIGEgdmFyaWFibGUgY2FsbGVkIGEKKGErYikgI3ByaW50IHRoZSBzdW0gb2YgYSBhbmQgYgpgYGAKYGBge3J9CmEgPC0gMwpiIDwtIDIKc3VtKGErYikgI2NhbGN1bGF0ZSBzdW0gb2YgMiBhbmQgMyB1c2luZyB0aGUgc3VtKCkgZnVuY3Rpb24KYGBgCgpgYGB7ciBzZXR1cF93b3Jrc3BhY2UsIG1lc3NhZ2U9RkFMU0V9CmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KG55Y2ZsaWdodHMxMykgI2xvYWQgdGhlIG55Y2ZsaWdodHMxMyBwYWNrYWdlCmdsaW1wc2UoZmxpZ2h0cykKCmBgYAoKYGBge3Igb3VyX2ZpcnN0X3Bsb3QsIG1lc3NhZ2U9RkFMU0V9CkFBX2ZsaWdodHMgPC0gZmlsdGVyKGZsaWdodHMsIGNhcnJpZXIgPT0gIkFBIikKZ2dwbG90KGRhdGEgPSBBQV9mbGlnaHRzKSArIAogIGdlb21fcG9pbnQobWFwcGluZyA9IGFlcyh4ID0gZGVwX2RlbGF5LCB5ID0gYXJyX2RlbGF5KSkgI21ha2UgYSBzY2F0dGVyIHBsb3QgYnkgbWFwcGluZyB0aGUgZGVwYXJ0dXJlIGRlbGF5IHZzLiBhcnJpdmFsIGRlbGF5CmBgYA==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiSG9tZXdvcmsgNCIKb3V0cHV0OiBnaXRodWJfZG9jdW1lbnQKLS0tCgpgYGB7cn0KIyMjIyMjIyMjCiMgUHJpbnQgdGhlIHN1bSBvZiBhIGFuZCBiCiMjIyMjIyMjIwphIDwtIDMgIyBBc3NpZ24gdGhlIHZhbHVlIDMgdG8gYSB2YXJpYWJsZSBjYWxsZWQgYQpiIDwtIDIgIyBBc3NpZ24gdGhlIHZhbHVlIDMgdG8gYSB2YXJpYWJsZSBjYWxsZWQgYQooYStiKSAKYGBgCgpgYGB7cn0KIyMjIyMjIyMjCiMgQ2FsY3VsYXRlIHN1bSBvZiAyIGFuZCAzIHVzaW5nIHRoZSBzdW0oKSBmdW5jdGlvbgojIyMjIyMjIyMKYSA8LSAzCmIgPC0gMgpzdW0oYStiKQpgYGAKCmBgYHtyIHNldHVwX3dvcmtzcGFjZSwgbWVzc2FnZT1GQUxTRX0KIyMjIyMjIyMjCiMgTG9hZCB0aGUgbnljZmxpZ2h0czEzIHBhY2thZ2UKIyMjIyMjIyMjCmxpYnJhcnkodGlkeXZlcnNlKQpsaWJyYXJ5KG55Y2ZsaWdodHMxMykgCmdsaW1wc2UoZmxpZ2h0cykKYGBgCgpgYGB7ciBvdXJfZmlyc3RfcGxvdCwgbWVzc2FnZT1GQUxTRX0KIyMjIyMjIyMjCiMgTWFrZSBhIHNjYXR0ZXIgcGxvdCBhYm91dCB0aGUgZGVwYXJ0dXJlIGRlbGF5IHZzLiBhcnJpdmFsIGRlbGF5CiMjIyMjIyMjIwpBQV9mbGlnaHRzIDwtIGZpbHRlcihmbGlnaHRzLCBjYXJyaWVyID09ICJBQSIpCiN2aWV3KEFBX2ZsaWdodHMpCmdncGxvdChkYXRhID0gQUFfZmxpZ2h0cykgKyAKICBnZW9tX3BvaW50KG1hcHBpbmcgPSBhZXMoeCA9IGRlcF9kZWxheSwgeSA9IGFycl9kZWxheSkpICNtYWtlIGEgc2NhdHRlciBwbG90IGJ5IG1hcHBpbmcgdGhlIGRlcGFydHVyZSBkZWxheSB2cy4gYXJyaXZhbCBkZWxheQpgYGA=</div>
 
 
 

@@ -2,24 +2,33 @@ Homework 4
 ================
 
 ``` r
-a <- 3 #assign the value 3 to a variable called a
-b <- 2 #assign the value 3 to a variable called a
-(a+b) #print the sum of a and b
+#########
+# Print the sum of a and b
+#########
+a <- 3 # Assign the value 3 to a variable called a
+b <- 2 # Assign the value 3 to a variable called a
+(a+b) 
 ```
 
     ## [1] 5
 
 ``` r
+#########
+# Calculate sum of 2 and 3 using the sum() function
+#########
 a <- 3
 b <- 2
-sum(a+b) #calculate sum of 2 and 3 using the sum() function
+sum(a+b)
 ```
 
     ## [1] 5
 
 ``` r
+#########
+# Load the nycflights13 package
+#########
 library(tidyverse)
-library(nycflights13) #load the nycflights13 package
+library(nycflights13) 
 glimpse(flights)
 ```
 
@@ -46,7 +55,11 @@ glimpse(flights)
     ## $ time_hour      <dttm> 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-01 0…
 
 ``` r
+#########
+# Make a scatter plot about the departure delay vs. arrival delay
+#########
 AA_flights <- filter(flights, carrier == "AA")
+#view(AA_flights)
 ggplot(data = AA_flights) + 
   geom_point(mapping = aes(x = dep_delay, y = arr_delay)) #make a scatter plot by mapping the departure delay vs. arrival delay
 ```
