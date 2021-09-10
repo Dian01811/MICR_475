@@ -2,7 +2,7 @@
 title: "Homework 4"
 output: github_document
 ---
-
+Part 1
 ```{r}
 #########
 # Print the sum of a and b
@@ -11,7 +11,7 @@ a <- 3 # Assign the value 3 to a variable called a
 b <- 2 # Assign the value 3 to a variable called a
 (a+b) 
 ```
-
+Part 2
 ```{r}
 #########
 # Calculate sum of 2 and 3 using the sum() function
@@ -20,17 +20,16 @@ a <- 3
 b <- 2
 sum(a+b)
 ```
-
+Part 3
 ```{r setup_workspace, message=FALSE}
 #########
 # Load the nycflights13 package
 #########
 library(tidyverse)
 library(nycflights13) 
-glimpse(flights)
 ```
-
-```{r our_first_plot, message=FALSE}
+Part 4
+```{r our_first_plot, message=FALSE, warning=FALSE}
 #########
 # Make a scatter plot about the departure delay vs. arrival delay
 #########
