@@ -29,16 +29,16 @@ dplyr::sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that conta
     ## # A tibble: 539 × 10
     ##    carat cut       color clarity depth table price     x     y     z
     ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
-    ##  1  0.38 Ideal     E     VVS1     62.4    56  1327  4.67  4.64  2.9 
-    ##  2  0.9  Very Good H     VS2      61.8    56  4155  6.18  6.25  3.84
-    ##  3  0.42 Ideal     D     VS1      61.4    55  1006  4.8   4.9   2.98
-    ##  4  0.4  Ideal     G     VS2      62.3    54   792  4.73  4.77  2.96
-    ##  5  0.74 Good      G     SI1      63.6    58  1865  5.73  5.71  3.64
-    ##  6  0.43 Ideal     E     SI1      62.6    56   975  4.82  4.79  3.01
-    ##  7  1.06 Very Good F     VS2      62.7    55  6627  6.54  6.5   4.09
-    ##  8  0.34 Very Good G     VVS2     62.3    59   740  4.45  4.48  2.78
-    ##  9  0.3  Very Good E     VS2      62.8    56   658  4.28  4.32  2.7 
-    ## 10  0.4  Premium   I     VVS1     61.5    58  1080  4.76  4.7   2.91
+    ##  1  0.59 Very Good G     VS2      61.5    59  1618  5.32  5.41  3.3 
+    ##  2  0.9  Ideal     G     VVS2     61.6    56  6302  6.2   6.23  3.83
+    ##  3  1.04 Ideal     D     SI1      61.7    57  5952  6.55  6.51  4.03
+    ##  4  1.06 Premium   H     VS2      60.8    59  5205  6.55  6.58  3.99
+    ##  5  0.33 Ideal     G     VS1      62.1    56   666  4.4   4.42  2.74
+    ##  6  0.36 Premium   E     VS1      61.3    58   852  4.56  4.58  2.8 
+    ##  7  0.42 Ideal     G     VVS1     60      57  1235  4.86  4.84  2.91
+    ##  8  1.01 Good      G     SI2      63.7    56  4211  6.26  6.34  4.01
+    ##  9  0.54 Ideal     F     VVS1     60.8    56  2356  5.28  5.34  3.23
+    ## 10  1.26 Premium   D     SI2      61.9    58  5412  6.88  6.81  4.24
     ## # … with 529 more rows
 
 \#Part 3
@@ -46,23 +46,10 @@ dplyr::sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that conta
 ``` r
 clarity_size <- diamonds %>%
   group_by(clarity) %>%
-  arrange(carat, .by_group = TRUE) %>%
-  top_n(100,carat) %>% #select the 100 largest diamonds in each clarity category
+  
+ slice_max(order_by = carat, n=100, with_ties = FALSE)%>% #select the 100 largest diamonds in each clarity category
   summarise(average.clarify = mean(carat, na.rm = TRUE)) #calculate the average size
-  (clarity_size)
 ```
-
-    ## # A tibble: 8 × 2
-    ##   clarity average.clarify
-    ##   <ord>             <dbl>
-    ## 1 I1                 2.46
-    ## 2 SI2                2.62
-    ## 3 SI1                2.29
-    ## 4 VS2                2.22
-    ## 5 VS1                2.10
-    ## 6 VVS2               1.64
-    ## 7 VVS1               1.50
-    ## 8 IF                 1.39
 
 \#Part 4
 

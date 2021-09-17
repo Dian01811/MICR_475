@@ -18,10 +18,9 @@ dplyr::sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that conta
 ```{r, message=FALSE, warning=FALSE}
 clarity_size <- diamonds %>%
   group_by(clarity) %>%
-  arrange(carat, .by_group = TRUE) %>%
-  top_n(100,carat) %>% #select the 100 largest diamonds in each clarity category
+  
+ slice_max(order_by = carat, n=100, with_ties = FALSE)%>% #select the 100 largest diamonds in each clarity category
   summarise(average.clarify = mean(carat, na.rm = TRUE)) #calculate the average size
-  (clarity_size)
 ```
 #Part 4
 ```{r, message=FALSE, warning=FALSE}
