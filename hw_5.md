@@ -29,16 +29,16 @@ dplyr::sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that conta
     ## # A tibble: 539 × 10
     ##    carat cut       color clarity depth table price     x     y     z
     ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
-    ##  1  0.59 Very Good G     VS2      61.5    59  1618  5.32  5.41  3.3 
-    ##  2  0.9  Ideal     G     VVS2     61.6    56  6302  6.2   6.23  3.83
-    ##  3  1.04 Ideal     D     SI1      61.7    57  5952  6.55  6.51  4.03
-    ##  4  1.06 Premium   H     VS2      60.8    59  5205  6.55  6.58  3.99
-    ##  5  0.33 Ideal     G     VS1      62.1    56   666  4.4   4.42  2.74
-    ##  6  0.36 Premium   E     VS1      61.3    58   852  4.56  4.58  2.8 
-    ##  7  0.42 Ideal     G     VVS1     60      57  1235  4.86  4.84  2.91
-    ##  8  1.01 Good      G     SI2      63.7    56  4211  6.26  6.34  4.01
-    ##  9  0.54 Ideal     F     VVS1     60.8    56  2356  5.28  5.34  3.23
-    ## 10  1.26 Premium   D     SI2      61.9    58  5412  6.88  6.81  4.24
+    ##  1  0.28 Very Good E     VS1      62.2  59     428  4.19  4.23  2.62
+    ##  2  1.53 Ideal     F     SI1      62    56   11229  7.43  7.38  4.59
+    ##  3  0.31 Ideal     E     VS1      61.6  57     942  4.35  4.32  2.67
+    ##  4  0.92 Premium   H     VS2      59.6  59    3916  6.32  6.29  3.76
+    ##  5  0.61 Ideal     E     VVS2     62.4  53.9  2907  5.42  5.43  3.38
+    ##  6  0.32 Ideal     D     VS2      61.7  54     758  4.38  4.43  2.72
+    ##  7  0.3  Ideal     D     SI1      62.5  57     709  4.32  4.29  2.69
+    ##  8  1.07 Premium   F     SI2      61.8  59    4560  6.53  6.57  4.05
+    ##  9  0.54 Ideal     G     VS2      62.8  55    1441  5.23  5.17  3.27
+    ## 10  1.09 Ideal     E     SI2      61.6  55    5035  6.6   6.64  4.08
     ## # … with 529 more rows
 
 \#Part 3
@@ -49,7 +49,20 @@ clarity_size <- diamonds %>%
   
  slice_max(order_by = carat, n=100, with_ties = FALSE)%>% #select the 100 largest diamonds in each clarity category
   summarise(average.clarify = mean(carat, na.rm = TRUE)) #calculate the average size
+  (clarity_size)
 ```
+
+    ## # A tibble: 8 × 2
+    ##   clarity average.clarify
+    ##   <ord>             <dbl>
+    ## 1 I1                 2.51
+    ## 2 SI2                2.62
+    ## 3 SI1                2.30
+    ## 4 VS2                2.23
+    ## 5 VS1                2.10
+    ## 6 VVS2               1.66
+    ## 7 VVS1               1.51
+    ## 8 IF                 1.40
 
 \#Part 4
 

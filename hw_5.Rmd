@@ -21,6 +21,7 @@ clarity_size <- diamonds %>%
   
  slice_max(order_by = carat, n=100, with_ties = FALSE)%>% #select the 100 largest diamonds in each clarity category
   summarise(average.clarify = mean(carat, na.rm = TRUE)) #calculate the average size
+  (clarity_size)
 ```
 #Part 4
 ```{r, message=FALSE, warning=FALSE}
