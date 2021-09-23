@@ -1,3 +1,4 @@
+
 ![This is an unsuccessful image](/Users/dian/Desktop/R/MICR_475/hw_06_img:bad.png)
 
 The data named "Ionic Radius" is mapped to the x axis
