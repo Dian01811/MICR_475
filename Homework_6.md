@@ -1,8 +1,7 @@
 Homework\_6
 ================
 
-![This is an unsuccessful
-image](/Users/dian/Desktop/R/MICR_475/hw_06_img_bad.PNG)
+![This is an unsuccessful image](hw_06_img_bad.png)
 
 -   The data named “Ionic Radius” is mapped to the x axis
 -   The data named “Partition Coefficient” is mapped to the y axis. The
@@ -14,8 +13,7 @@ figure overlap to varying degrees, and the range of numbers each axis
 covers is too large, which affects our judgment of the relative
 relationship of the data.
 
-![This is a successful
-image](/Users/dian/Desktop/R/MICR_475/hw_06_img_good.PNG)
+![This is a successful image](hw_06_img_good.png)
 
 -   The data named “Ionic Radius” is mapped to the x axis
 -   The data named “Partition Coefficient” is mapped to the y axis. The
