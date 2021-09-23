@@ -10,7 +10,7 @@ The data are displayed using both points and lines
 The unsuccessful plot is because the points, lines and characters in the figure overlap to varying degrees, and the range of numbers each axis covers is too large, which affects our judgment of the relative relationship of the data.
 
 
-![This is a successful image](/Users/dian/Desktop/R/MICR_475/hw_06_img:good.png)
+![](/Users/dian/Desktop/R/MICR_475/hw_06_img:good.png)
 
 The data named "Ionic Radius" is mapped to the x axis
 
