@@ -2,11 +2,9 @@
 title: "R Notebook"
 output: github_document
 ---
-![this is my image.](/Users/dian/Desktop/R/MICR475/hw_2_files/figure-gfm/our_first_plot-1.png)
 
 
+![](/Users/dian/Desktop/R/MICR_475/hw_2_files/figure-gfm/our_first_plot-1.png){width=40%}
 
-```{r}
-[this is my image.](/Users/dian/Desktop/R/MICR475/hw_2_files/figure-gfm/our_first_plot-1.png)
-```
+
 
