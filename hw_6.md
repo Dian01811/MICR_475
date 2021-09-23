@@ -12,6 +12,8 @@ The unsuccessful plot is because the points, lines and characters in the figure 
 
 ![](/Users/dian/Desktop/R/MICR_475/hw_06_img:good.png)
 
+This is a successful image
+
 The data named "Ionic Radius" is mapped to the x axis
 
 The data named "Partition Coefficient" is mapped to the y axis. The data is continuous with log-transformation
