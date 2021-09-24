@@ -1,7 +1,9 @@
 Homework\_6
 ================
 
-![This is an unsuccessful image](hw_06_img_bad.png)
+<figure>
+<img src="hw_06_img_bad.png" style="width:50.0%" alt="This is an unsuccessful image" /><figcaption aria-hidden="true">This is an unsuccessful image</figcaption>
+</figure>
 
 -   The data named “Ionic Radius” is mapped to the x axis
 -   The data named “Partition Coefficient” is mapped to the y axis. The
@@ -13,7 +15,9 @@ points, lines and characters in the figure overlap to varying degrees,
 and the range of numbers each axis covers is too large, which interfere
 with our perception about the relative relationship of the data.
 
-![This is a successful image](hw_06_img_good.png)
+<figure>
+<img src="hw_06_img_good.png" style="width:50.0%" alt="This is a successful image" /><figcaption aria-hidden="true">This is a successful image</figcaption>
+</figure>
 
 -   The data named “Ionic Radius” is mapped to the x axis
 -   The data named “Partition Coefficient” is mapped to the y axis. The
@@ -22,7 +26,6 @@ with our perception about the relative relationship of the data.
 -   The data are displayed using both points and lines
 
 I think this plot is “good”. Even if it contains more information, this
-plot can more clearly show the relationship and trend between various
-points. However, the color selection may not be friendly to color
-blindness and needs to be adjusted. I think this is understandable
-because the data sets contained in this plot are relatively complex.
+plot can more clearly show the relationship and trend in various points.
+However, the color selection may not be friendly to color blindness and
+needs to be adjusted.
