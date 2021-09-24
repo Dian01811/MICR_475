@@ -1,9 +1,7 @@
 Homework\_6
 ================
 
-<figure>
-<img src="hw_06_img_bad.png" style="width:50.0%" alt="This is an unsuccessful image" /><figcaption aria-hidden="true">This is an unsuccessful image</figcaption>
-</figure>
+![This is an unsuccessful image](hw_06_img_bad.png)
 
 -   The data named “Ionic Radius” is mapped to the x axis
 -   The data named “Partition Coefficient” is mapped to the y axis. The
@@ -17,9 +15,7 @@ with our perception about the relative relationship of the data. And
 also, the font and dot sizes do not match, they are just too large for
 this plot.
 
-<figure>
-<img src="hw_06_img_good.png" style="width:50.0%" alt="This is a successful image" /><figcaption aria-hidden="true">This is a successful image</figcaption>
-</figure>
+![This is a successful image](hw_06_img_good.png)
 
 -   The data named “Ionic Radius” is mapped to the x axis
 -   The data named “Partition Coefficient” is mapped to the y axis. The
