@@ -13,7 +13,9 @@ Homework\_6
 I think this plot is “bad” according to Wilke’s concept, because the
 points, lines and characters in the figure overlap to varying degrees,
 and the range of numbers each axis covers is too large, which interfere
-with our perception about the relative relationship of the data.
+with our perception about the relative relationship of the data. And
+also, the font and dot sizes do not match, they are just too large for
+this plot.
 
 <figure>
 <img src="hw_06_img_good.png" style="width:50.0%" alt="This is a successful image" /><figcaption aria-hidden="true">This is a successful image</figcaption>

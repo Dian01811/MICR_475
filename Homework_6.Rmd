@@ -9,7 +9,7 @@ output: github_document
 * The data named "Partition Coefficient" is mapped to the y axis. The data is continuous with log-transformation
 * The data are displayed using both points and lines
 
-I think this plot is “bad” according to Wilke's concept, because the points, lines and characters in the figure overlap to varying degrees, and the range of numbers each axis covers is too large, which interfere with our perception about the relative relationship of the data.
+I think this plot is “bad” according to Wilke's concept, because the points, lines and characters in the figure overlap to varying degrees, and the range of numbers each axis covers is too large, which interfere with our perception about the relative relationship of the data. And also, the font and dot sizes do not match, they are just too large for this plot.
 
 
 ![This is a successful image](hw_06_img_good.png){width=50%}
