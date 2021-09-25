@@ -15,13 +15,12 @@ with our perception about the relative relationship of the data. And
 also, the font and dot sizes do not match, they are just too large for
 this plot.
 
-![This is a successful image](hw_06_img_good.png)
-
--   The data named “Ionic Radius” is mapped to the x axis
--   The data named “Partition Coefficient” is mapped to the y axis. The
-    data is continuous with log-transformation
--   The data named “Valence” is mapped to color, as well as to shape
--   The data are displayed using both points and lines
+![This is a successful image](hw_06_img_good.png)  
+\* The data named “Ionic Radius” is mapped to the x axis \* The data
+named “Partition Coefficient” is mapped to the y axis. The data is
+continuous with log-transformation \* The data named “Valence” is mapped
+to color, as well as to shape \* The data are displayed using both
+points and lines
 
 I think this plot is “good”. Even if it contains more information, this
 plot can more clearly show the relationship and trend in various points.
