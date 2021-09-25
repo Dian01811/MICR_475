@@ -2,7 +2,7 @@
 title: "Homework 5"
 output: github_document
 ---
-#Part 1
+# Part 1
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 number_cut <- diamonds %>%
@@ -10,20 +10,19 @@ number_cut <- diamonds %>%
   summarise(count = n()) #count of diamonds in each “cut” 
 (number_cut) #print the data frame
 ```
-#Part 2
+# Part 2
 ```{r, message=FALSE, warning=FALSE}
-dplyr::sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that contains 1% of the rows
+sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that contains 1% of the rows
 ```
-#Part 3
+# Part 3
 ```{r, message=FALSE, warning=FALSE}
 clarity_size <- diamonds %>%
   group_by(clarity) %>%
-  
- slice_max(order_by = carat, n=100, with_ties = FALSE)%>% #select the 100 largest diamonds in each clarity category
+ slice_max(order_by = carat, n=100, with_ties = FALSE) %>% #select the 100 largest diamonds in each clarity category
   summarise(average.clarify = mean(carat, na.rm = TRUE)) #calculate the average size
   (clarity_size)
 ```
-#Part 4
+# Part 4
 ```{r, message=FALSE, warning=FALSE}
 ggplot(data = diamonds) + 
   geom_point(mapping = aes(x = x, y = y))
@@ -31,7 +30,7 @@ ggplot(data = diamonds) +
   geom_point(mapping = aes(x = x, y = z))
 ```
 
-#Part 5
+# Part 5
 ```{r, message=FALSE, warning=FALSE}
 correct_size <- diamonds %>%
   filter (x > 3, y < 20, z > 2 & z < 10) #remove bad points

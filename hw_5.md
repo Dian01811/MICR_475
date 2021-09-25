@@ -1,7 +1,7 @@
 Homework 5
 ================
 
-\#Part 1
+# Part 1
 
 ``` r
 library(tidyverse)
@@ -20,34 +20,33 @@ number_cut <- diamonds %>%
     ## 4 Premium   13791
     ## 5 Ideal     21551
 
-\#Part 2
+# Part 2
 
 ``` r
-dplyr::sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that contains 1% of the rows
+sample_frac(diamonds, 0.01, replace = TRUE) #create a data set that contains 1% of the rows
 ```
 
     ## # A tibble: 539 × 10
     ##    carat cut       color clarity depth table price     x     y     z
     ##    <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
-    ##  1  0.28 Very Good E     VS1      62.2  59     428  4.19  4.23  2.62
-    ##  2  1.53 Ideal     F     SI1      62    56   11229  7.43  7.38  4.59
-    ##  3  0.31 Ideal     E     VS1      61.6  57     942  4.35  4.32  2.67
-    ##  4  0.92 Premium   H     VS2      59.6  59    3916  6.32  6.29  3.76
-    ##  5  0.61 Ideal     E     VVS2     62.4  53.9  2907  5.42  5.43  3.38
-    ##  6  0.32 Ideal     D     VS2      61.7  54     758  4.38  4.43  2.72
-    ##  7  0.3  Ideal     D     SI1      62.5  57     709  4.32  4.29  2.69
-    ##  8  1.07 Premium   F     SI2      61.8  59    4560  6.53  6.57  4.05
-    ##  9  0.54 Ideal     G     VS2      62.8  55    1441  5.23  5.17  3.27
-    ## 10  1.09 Ideal     E     SI2      61.6  55    5035  6.6   6.64  4.08
+    ##  1  0.5  Ideal     G     VVS2     62.7    55  1836  5.07  5.1   3.19
+    ##  2  0.85 Ideal     F     VS2      62.4    57  3641  6.13  6.01  3.79
+    ##  3  0.42 Premium   E     SI1      61.6    59   773  4.83  4.85  2.98
+    ##  4  1.09 Ideal     D     SI1      61.9    57  6133  6.57  6.61  4.08
+    ##  5  1.03 Ideal     F     VVS1     61.3    54  9881  6.56  6.62  4.04
+    ##  6  1.5  Premium   G     SI1      62.7    58 10087  7.28  7.23  4.55
+    ##  7  0.31 Ideal     D     VS2      62.1    54   942  4.37  4.33  2.7 
+    ##  8  0.31 Ideal     D     VS2      62.2    55   942  4.34  4.31  2.69
+    ##  9  0.3  Very Good I     SI1      61.2    58   405  4.28  4.31  2.63
+    ## 10  0.31 Very Good J     SI1      58.1    62   353  4.44  4.47  2.59
     ## # … with 529 more rows
 
-\#Part 3
+# Part 3
 
 ``` r
 clarity_size <- diamonds %>%
   group_by(clarity) %>%
-  
- slice_max(order_by = carat, n=100, with_ties = FALSE)%>% #select the 100 largest diamonds in each clarity category
+ slice_max(order_by = carat, n=100, with_ties = FALSE) %>% #select the 100 largest diamonds in each clarity category
   summarise(average.clarify = mean(carat, na.rm = TRUE)) #calculate the average size
   (clarity_size)
 ```
@@ -64,7 +63,7 @@ clarity_size <- diamonds %>%
     ## 7 VVS1               1.51
     ## 8 IF                 1.40
 
-\#Part 4
+# Part 4
 
 ``` r
 ggplot(data = diamonds) + 
@@ -80,7 +79,7 @@ ggplot(data = diamonds) +
 
 ![](hw_5_files/figure-gfm/unnamed-chunk-4-2.png)<!-- -->
 
-\#Part 5
+# Part 5
 
 ``` r
 correct_size <- diamonds %>%
