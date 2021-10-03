@@ -41,7 +41,7 @@ library(ggExtra)
 major <- read_csv("Major_element.csv") %>%
   filter(Y < 20)
  p <- ggplot(data = major, mapping = aes(x = Sr/Y, y = Y)) + 
-  geom_point(mapping = aes(color = Region, shape=Region), size=2.5) +
+  geom_point(mapping = aes(color = Region, shape=Region), size=3) +
   scale_color_manual(values=c("#000000", "#E69F00", "#56B4E9"))+
   stat_ellipse(aes(x=Sr/Y, y=Y,color=Region),type = "norm")+
    theme(axis.text.x = element_text( size=10),
