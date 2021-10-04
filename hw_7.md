@@ -56,7 +56,7 @@ major <- read_csv("Major_element.csv") %>%
         panel.background = element_blank(), 
         axis.line = element_line(colour = "black"))
   
-  P1 <- ggMarginal(p, type="histogram", groupFill = TRUE)
+  P1 <- ggMarginal(p, type="density", groupFill = TRUE)
   print(P1)
 ```
 
@@ -67,5 +67,5 @@ the points, and each color corresponds to a shape to make them more
 friendly to red and green color blindness. In addition, we resized the
 labels and points to make them easier to read. We removed an obvious
 outlier, as well as a gray background and a white grid. We decided to
-use ellipse and histogram to display the distribution range of each
-group of points, and the effect is more intuitive.
+use ellipse and density plot to display the distribution range of each
+group of data, and the effect is more intuitive.
