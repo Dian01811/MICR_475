@@ -65,7 +65,8 @@ glance <- by_run %>%
   mutate(glance = map(model, broom::glance)) %>% 
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
-  geom_point() 
+  geom_point() + 
+  ggtitle("square root model")
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
@@ -87,9 +88,50 @@ glance <- by_run_2 %>%
   mutate(glance = map(model, broom::glance)) %>% 
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
-  geom_point() 
+  geom_point() + 
+  ggtitle("monod-type model")
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 It is better to use the monod-type model for this sort of experiment.
+
+# Part 3
+
+``` r
+md1 <- DNase
+md1 %>% 
+ggplot(aes(x=conc, y=density)) + 
+  geom_point() 
+```
+
+![](hw_8_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
+
+``` r
+nls_mod <- formula(density ~ beta_1 * sqrt(conc) + beta_0)
+
+single_sqrt_model <- nls2(nls_mod, 
+                    data = DNase, 
+                    start = list(beta_1 = 0.5, beta_0 = 0.1))
+ md1 %>% 
+  add_predictions(single_sqrt_model) %>% 
+  ggplot(aes(conc, pred)) + 
+  geom_smooth()+ 
+  ggtitle("square root model_smooth")
+```
+
+![](hw_8_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+``` r
+mon_mod <- formula(density ~ beta_3*conc / (beta_4+conc))
+monod_model <- nls2(mon_mod, 
+               data = DNase, 
+               start = list(beta_3 = 2, beta_4 = 3))
+ md1 %>% 
+  add_predictions(monod_model) %>% 
+  ggplot(aes(conc, pred)) + 
+  geom_smooth()+ 
+  ggtitle("monod-type model_smooth")
+```
+
+![](hw_8_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
