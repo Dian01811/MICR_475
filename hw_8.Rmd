@@ -1,0 +1,82 @@
+---
+title: "Homework 8"
+output: github_document
+---
+
+
+# Part 1
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gapminder)
+
+```
+
+```{r, message=FALSE, warning=FALSE}
+d_nest <- diamonds %>%
+  group_by(color) %>%
+  nest()
+# Make a function to create the linear models we want
+price_by_weight <- function(df) {
+  m <- lm(price ~ carat, data=df)
+  m
+}
+
+d_nest <- d_nest %>%
+  mutate(fit = map(data, price_by_weight))
+
+get_slope <- function(fit_obj) {
+  slope <- coef(fit_obj)[2]
+  slope
+}
+
+d_nest <- d_nest %>%
+  mutate(slope = map_dbl(fit, get_slope)) %>%
+  arrange(desc(slope))
+  head(d_nest)
+```
+# Part 2
+```{r, message=FALSE, warning=FALSE}
+library(modelr)
+library(tidyr)
+library(nls2)
+by_run <- DNase %>% 
+  group_by(Run) %>% 
+  nest()
+nls_mod <- formula(density ~ beta_1 * sqrt(conc) + beta_0)
+
+single_sqrt_model <- function(ssm) {
+  nls2(nls_mod, 
+  data = ssm, 
+  start = list(beta_1 = 0.5, beta_0 = 0.1))
+}
+by_run <- by_run %>% 
+  mutate(model = map(data, single_sqrt_model ))
+glance <- by_run %>% 
+  mutate(glance = map(model, broom::glance)) %>% 
+  unnest(glance)
+ggplot(glance, aes(x=Run, y=AIC)) + 
+  geom_point() 
+```
+
+```{r, message=FALSE, warning=FALSE}
+by_run_2 <- DNase %>% 
+  group_by(Run) %>% 
+  nest()
+mon_mod <- formula(density ~ beta_3*conc / (beta_4+conc))
+monod_model <- function(mm) {
+  nls2(mon_mod, 
+  data = mm, 
+  start = list(beta_3 = 2, beta_4 = 3))
+}
+by_run_2 <- by_run_2 %>% 
+  mutate(model = map(data, monod_model ))
+
+glance <- by_run_2 %>% 
+  mutate(glance = map(model, broom::glance)) %>% 
+  unnest(glance)
+ggplot(glance, aes(x=Run, y=AIC)) + 
+  geom_point() 
+
+```
+
+It is better to use the monod-type model for this sort of experiment.
