@@ -8,7 +8,6 @@ output: github_document
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(gapminder)
-
 ```
 
 ```{r, message=FALSE, warning=FALSE}
@@ -56,7 +55,7 @@ glance <- by_run %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("square root model")
+  ggtitle("Square root model")
 ```
 
 ```{r, message=FALSE, warning=FALSE}
@@ -77,7 +76,7 @@ glance <- by_run_2 %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("monod-type model")
+  ggtitle("Monod-type model")
 
 ```
 
@@ -89,7 +88,6 @@ md1 <- DNase
 md1 %>% 
 ggplot(aes(x=conc, y=density)) + 
   geom_point() 
-
 ```
 ```{r, message=FALSE, warning=FALSE}
 nls_mod <- formula(density ~ beta_1 * sqrt(conc) + beta_0)
@@ -100,8 +98,9 @@ single_sqrt_model <- nls2(nls_mod,
  md1 %>% 
   add_predictions(single_sqrt_model) %>% 
   ggplot(aes(conc, pred)) + 
+  geom_point(aes(x=conc, y=density)) +
   geom_smooth()+ 
-  ggtitle("square root model_smooth")
+  ggtitle("Square root model_smooth line")
 ```
 
 ```{r, message=FALSE, warning=FALSE}
@@ -112,6 +111,7 @@ monod_model <- nls2(mon_mod,
  md1 %>% 
   add_predictions(monod_model) %>% 
   ggplot(aes(conc, pred)) + 
+  geom_point(aes(x=conc, y=density)) +
   geom_smooth()+ 
-  ggtitle("monod-type model_smooth")
+  ggtitle("Monod-type model_smooth line")
 ```

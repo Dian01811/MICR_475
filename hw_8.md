@@ -66,7 +66,7 @@ glance <- by_run %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("square root model")
+  ggtitle("Square root model")
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
@@ -89,7 +89,7 @@ glance <- by_run_2 %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("monod-type model")
+  ggtitle("Monod-type model")
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
@@ -116,8 +116,9 @@ single_sqrt_model <- nls2(nls_mod,
  md1 %>% 
   add_predictions(single_sqrt_model) %>% 
   ggplot(aes(conc, pred)) + 
+  geom_point(aes(x=conc, y=density)) +
   geom_smooth()+ 
-  ggtitle("square root model_smooth")
+  ggtitle("Square root model_smooth line")
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
@@ -130,8 +131,9 @@ monod_model <- nls2(mon_mod,
  md1 %>% 
   add_predictions(monod_model) %>% 
   ggplot(aes(conc, pred)) + 
+  geom_point(aes(x=conc, y=density)) +
   geom_smooth()+ 
-  ggtitle("monod-type model_smooth")
+  ggtitle("Monod-type model_smooth line")
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
