@@ -29,11 +29,11 @@ get_slope <- function(fit_obj) {
 d_nest <- d_nest %>%
   mutate(slope = map_dbl(fit, get_slope)) %>%
   arrange(desc(slope))
-  head(d_nest)
+  (d_nest)
 ```
 
-    ## # A tibble: 6 × 4
-    ## # Groups:   color [6]
+    ## # A tibble: 7 × 4
+    ## # Groups:   color [7]
     ##   color data                  fit    slope
     ##   <ord> <list>                <list> <dbl>
     ## 1 F     <tibble [9,542 × 9]>  <lm>   8677.
@@ -42,6 +42,7 @@ d_nest <- d_nest %>%
     ## 4 E     <tibble [9,797 × 9]>  <lm>   8296.
     ## 5 I     <tibble [5,422 × 9]>  <lm>   7761.
     ## 6 H     <tibble [8,304 × 9]>  <lm>   7619.
+    ## 7 J     <tibble [2,808 × 9]>  <lm>   7094.
 
 # Part 2
 
@@ -66,7 +67,8 @@ glance <- by_run %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("Square root model")
+  ggtitle("Square root model")+
+ scale_x_discrete(limits=glance$Run)
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
@@ -89,7 +91,8 @@ glance <- by_run_2 %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("Monod-type model")
+  ggtitle("Monod-type model")+
+ scale_x_discrete(limits=glance$Run)
 ```
 
 ![](hw_8_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->

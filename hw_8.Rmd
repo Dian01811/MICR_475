@@ -31,7 +31,7 @@ get_slope <- function(fit_obj) {
 d_nest <- d_nest %>%
   mutate(slope = map_dbl(fit, get_slope)) %>%
   arrange(desc(slope))
-  head(d_nest)
+  (d_nest)
 ```
 # Part 2
 ```{r, message=FALSE, warning=FALSE}
@@ -55,7 +55,8 @@ glance <- by_run %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("Square root model")
+  ggtitle("Square root model")+
+ scale_x_discrete(limits=glance$Run)
 ```
 
 ```{r, message=FALSE, warning=FALSE}
@@ -76,8 +77,8 @@ glance <- by_run_2 %>%
   unnest(glance)
 ggplot(glance, aes(x=Run, y=AIC)) + 
   geom_point() + 
-  ggtitle("Monod-type model")
-
+  ggtitle("Monod-type model")+
+ scale_x_discrete(limits=glance$Run)
 ```
 
 It is better to use the monod-type model for this sort of experiment.
