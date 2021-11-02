@@ -1,10 +1,8 @@
----
-title: "R Notebook"
-output: github_document
----
+library(leaflet)
+library(RColorBrewer)
+library(scales)
+library(lattice)
+library(dplyr)
 
-
-![](/Users/dian/Desktop/R/MICR_475/hw_2_files/figure-gfm/our_first_plot-1.png){width=40%}
-
-
-
+bb_data <- read.csv("Desktop/R/MICR_475/US_Accidents_Dec20_updated", stringsAsFactors = FALSE )
+ 
