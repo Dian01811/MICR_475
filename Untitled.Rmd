@@ -1,8 +1,0 @@
-library(leaflet)
-library(RColorBrewer)
-library(scales)
-library(lattice)
-library(dplyr)
-
-bb_data <- read.csv("Desktop/R/MICR_475/US_Accidents_Dec20_updated", stringsAsFactors = FALSE )
- 
